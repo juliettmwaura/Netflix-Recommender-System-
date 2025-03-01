@@ -1,13 +1,8 @@
 import streamlit as st
 import pickle
+import pandas as pd
 
-movies = pickle.load(open('movie_data.pkl', 'rb'))
-movies_list = movies['title'].values
+print(pickle.format_version)
 
-st.header("Movie Recommender System")
-st.selectbox("Select movie from dropdown", movies_list)
-
-
-
-if st.button("Show Recommend"):
-    pass
+df = pd.read_pickle('movie_data.pkl')
+print (df)
